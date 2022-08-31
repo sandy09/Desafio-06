@@ -5,11 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="En esta seccion encontraras los accesorios de parota perfectos para darle un toque de calidez a tus espacios.">
+    <meta name="description" content="Si quieres contactarnos para tu proyecto especializado en madera de parota o solicitarnos cotizacion de un mueble sobre pedido">
     <meta name="keywords" content="muebles, madera, parota, comedores, sala, sillas, decoracion, puebla">    
-    <!--Estilos css-->
     <link rel="stylesheet" href="../css/style.css">
-    <!--Importación tipografía-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -17,10 +15,12 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,700;1,100;1,200;1,300;1,900&display=swap"
         rel="stylesheet">
-    <title>Parota Furniture Design - Decoración</title>
+
+    <title>Contacto-Parota Furniture Design</title>
 </head>
 
 <body>
+    <!--Header con logo-->
     <!-- Menu hamburguesa-->
     <header class="container-fluid">
         <div class="row ">
@@ -46,50 +46,71 @@
             </nav>
         </div>
     </header>
-    <div class="bannerPromo">
-        <h2 class="bannerPromo__texto"> OFERTAS DE VERANO</h2>
-    </div>
-    <!--Contenido principal de la página-->
-    <main>
-        <!--Imagenes productos-->
-        <div class="contenido">
-            <div class="contenedorFiltros">
-                <div class="contenedorFiltros__filtro">
-                    <button class="filtro__boton">Ver filtros</button>
-                </div>
-                <div class="contenedorFiltros__texto">
-                    <h2 class="texto__principal">El elemento perfecto para decorar tu casa</h2>
-                </div>
-                <div class="contenedorFiltros__orden">
-                    <select class="orden__boton" name="ordenar" id="ordenar">
-                        <option disabled="" selected="">Ordenar por:</option>
-                        <option value="precio">Precio menor</option>
-                        <option value="precio">Precio de mayor</option>
-                    </select>
-                </div>
-            </div>
-            <div class="contenedorProductos">
-                <div class="contenedorProductos__card">
-                    <img class="card__img" src="../img/portavasos.png" alt="Producto">
-                    <h4 class="card__nombre">Descripción</h4>
-                    <h5 class="card__precio">$Precio</h5>
-                    <h5 class="card__preciodesc">$PrecioDesc</h5>
-                </div>
-                <div class="contenedorProductos__card">
-                    <img class="card__img" src="../img/portavasos.png" alt="Producto">
-                    <h4 class="card__nombre">Descripción</h4>
-                    <h5 class="card__precio">$Precio</h5>
-                    <h5 class="card__preciodesc">$PrecioDesc</h5>
-                </div>
-                <div class="contenedorProductos__card">
-                    <img class="card__img" src="../img/portavasos.png" alt="Producto">
-                    <h4 class="card__nombre">Descripción</h4>
-                    <h5 class="card__precio">$Precio</h5>
-                    <h5 class="card__preciodesc">$PrecioDesc</h5>
-                </div>
-            </div>
+    <!--Formulario de contacto-->
+    <div class="contenedorContacto">
+        <div class="contenedorContacto__sucursal">
+            <h2 class="sucursal__titulo">VISÍTANOS</h2>
+            <p class="sucursal__direccion">
+                Camino Real a Cholula 4802-B<br>
+                San Andres Cholula, Puebla <br><br>
+                Tel. <a href="tel:+522221195795">22-21-19-57-95</a><br><br>
+                Horario de apertura: <br>
+                De lunes a viernes de 11 a 7 pm<br>
+                Sábados de 10 am a 2 pm
+            </p><br>
+            <a href="https://www.facebook.com/parotafd"><img class="sucursal__iconos " src="../img/facebook.png"
+                    alt="Logo Facebook"></a>
+            <a href="https://www.instagram.com/parotafd/"><img class="sucursal__iconos" src="../img/instagram.png"
+                    alt="Logo instagram"></a>
         </div>
-    </main>
+
+        <div class="contenedorContacto__contenedorForm">
+            <h2 class="contenedorForm__titulo">FORMULARIO DE CONTACTO</h2>
+            <h3 class="contenedorForm__subtitulo">¿Te interesa un mueble sobre diseño?</h3>
+            <form action="" class="contenedorForm__contactform">
+                <fieldset class="contactForm__fieldset">
+                    <div>
+                        <label class="fieldset__label" for="nombre"> Nombre</label>
+                        <input class="fieldset__input" type="text" name="nombre" id="nombre"
+                            placeholder="Introduce tu nombre">
+                    </div>
+                    <br>
+                    <div>
+                        <label class="fieldset__label" for="email">Email</label>
+                        <input class="fieldset__input" type="text" name="email" id="email"
+                            placeholder="Introduce tu email">
+
+                    </div>
+                    <br>
+                    <div>
+                        <label class="fieldset__label" for="telefono">Telefono</label>
+                        <input class="fieldset__input" type="tel" name="telefono" id="telefono"
+                            placeholder="Introduce tu telefono">
+                    </div>
+                    <br>
+                    <div>
+                        <label class="fieldset__label" for="interes">Interés</label>
+                        <select class="fieldset__input" name="interes" id="interes">
+                            <option value="Comedores">Comedores</option>
+                            <option value="Sala">Sala</option>
+                            <option value="Decoracion">Decoracion</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div>
+                        <div><label class="fieldset__label" for="message">Mensaje</label></div>
+                        <textarea class="fieldset__textarea" type="text" name="message" id="message" class="message"
+                            rows="5" cols="50" placeholder="¿En que te podemos ayudar?"></textarea>
+                    </div>
+                    <br>
+                    <div>
+                        <input class="fieldset__button" type="submit" value="Enviar" class="boton">
+                        <input class="fieldset__button" type="reset" value="Borrar" class="boton">
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
     <!--Footer-->
     <footer>
         <!--Mapa ubicación tienda-->

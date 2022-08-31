@@ -1,5 +1,7 @@
 @import "base/variables";
 @import "base/extend";
+@import "base/mapas";
+@import "base/mixin";
 
 *{
     margin: 0;
@@ -7,7 +9,7 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-
+    
 }
 
 /*CSS HEADER*/
@@ -74,6 +76,15 @@ main{
                 color: $color-fuente-dark;
                 border: 2px dotted white;
                 padding: 20px;
+                @include breakpoint-max(sm){
+                    display: none;
+                  }
+                .texto__principal{
+                    text-align: center;
+                    font-size: 1.5rem;
+                }
+                @extend %flex-spacearound-center;
+                
 
             }
             .contenedorFiltros__orden{
@@ -83,11 +94,14 @@ main{
             }
         }
         .contenedorProductos{
-            height: $height-2;
-            @extend %flex-spacearound-center;
+            @include breakpoint-max(sm){
+                height: $height-sm;
+              }
+            height:$height-2;
+            @extend %flex-spaceevenly;
             flex-wrap: wrap;
             flex-flow: row wrap;
-            padding-bottom:50px;
+            padding-bottom:  50px;
             .contenedorProductos__card{
                 height: $card-height;
                 width: $card-width;
@@ -124,6 +138,9 @@ footer{
     background-color: $color-principal;
     .contenedorMapa{
         display: inline;
+        @include breakpoint-max(sm){
+            display: none;
+          }
         .contenedorMapa__mapa{
             margin-top:20px;
             margin-left:20px;

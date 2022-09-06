@@ -60,8 +60,130 @@ header{
 body{
     background-color: $color-secundario;
 }
+/*CSS INDEX*/
+.content{
+    height: 100%;
+    background-color: $color-secundario;
+    padding: $size-double;
+    .content__imagenes{
+        display: grid;
+        grid-template-columns:50% 50%;
+        grid-template-rows:auto;
+        grid-template-areas:
+                            "titulo titulo" 
+                            "oferta img_1" 
+                            "img_2 visitanos"
+                            "img_3 visitanos";    
+        justify-content:center;
+        align-items:flex-start;  
+        grid-gap: $size-double;
+        padding: $size-double;
+        @include breakpoint-max(sm){
+            grid-template-columns:100%;
+            grid-template-rows:auto;
+            grid-template-areas: 
+                                "titulo"
+                                "oferta"
+                                "img_1" 
+                                "img_2"
+                                "img_3" 
+                                "visitanos";  
+          }
+        .imagenes__titulo{
+            @extend %propiedades-titulos-con-back;
+            grid-area: titulo;
+            text-align: center;
+            text-transform: uppercase;
+            background-color: #8392a9d1;
+
+        }
+
+        .imagenes__boton{
+            background-color: white;
+            border: 1px solid black;
+            padding: $size-single;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            justify-items: center;
+            width: 300px;
+            margin-top: 20px;
+            text-decoration: none;
+            color: black;
+            @include breakpoint-max(sm){
+                font-size: 10px;
+                width: 190px;
+            }
+            @include breakpoint(sm,md)
+            {
+                font-size: 15px;                
+            }
+
+        }
+        .imagenes__oferta{
+            grid-area: oferta;
+            background-color: red;
+            width: 100%;
+            height: 100%;
+            @extend %propiedades-oferta;
+            @extend %flex-column-all-center;
+            a{
+                text-decoration: none;
+                color: white;
+                padding: $size-single/1.5;
+                
+            }
+            a:hover{
+                transform: scale(105%);
+                
+            } 
+            @include breakpoint-max(sm){
+                height: 250px;
+                font-size: xx-large;
+            }
+            @include breakpoint(sm,md)
+            {
+                font-size: 30px;                
+            }
+        
+        }
+        div{
+            
+            display: flex;
+            flex-direction: column;
+            justify-items: center;
+            align-items: center;
+
+        }
+        img{
+            width: 100%;
+            box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.2);
+            
+        }
+        .imagenes__img_1{   
+            grid-area: img_1;         
+        }
+        .imagenes__img_2{
+            grid-area: img_2;
+            
+        }
+        .imagenes__img_3{
+            grid-area: img_3;
+            
+        }
+        .imagenes__visitanos{
+            grid-area: visitanos;
+          
+        }
+
+    }
+    
+}
+/*CSS PAGINAS CATEGORIAS*/
 main{
     background-color: $color-secundario;
+    height: 100%;
+    width: 100%;
     .contenido{
         .contenedorFiltros{
             height: $height-1;
@@ -84,8 +206,6 @@ main{
                     font-size: 1.5rem;
                 }
                 @extend %flex-spacearound-center;
-                
-
             }
             .contenedorFiltros__orden{
                 .orden__boton{
@@ -94,17 +214,15 @@ main{
             }
         }
         .contenedorProductos{
-            @include breakpoint-max(sm){
-                height: $height-sm;
-              }
-            height:$height-2;
-            @extend %flex-spaceevenly;
+            @extend %flex-spacearound-center;
             flex-wrap: wrap;
-            flex-flow: row wrap;
-            padding-bottom:  50px;
+            
+            height: 100%;
+            margin-left: $size-single;
+            margin-right: $size-single;
             .contenedorProductos__card{
-                height: $card-height;
-                width: $card-width;
+                height: 100%;
+                padding: $size-double;
                 display: inline-block;
                 .card__img{
                     height: $card-height;
@@ -126,7 +244,6 @@ main{
                     text-align: center;
                     font-style: italic;
                     text-decoration: line-through;
-                
 
                 }
             }
@@ -134,6 +251,117 @@ main{
         }
     }
 }
+/*CSS FAQ*/
+.accordion-item button:not(.collapsed) {
+    color: white;
+    background-color: #5D6B7D;
+
+}
+/*CSS CONTACTO*/
+.contenedorContacto{
+    background-color: $color-secundario;
+    height: auto;
+    display: flex;
+    justify-content:space-around; 
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    padding: 50px 0px 50px 0px; 
+    .contenedorContacto__sucursal{
+        width: 50%;
+        @extend %flex-column-all-center;
+        text-align: center;
+        line-height: 30px;
+        margin-top: 5px;
+        .sucursal__titulo{
+            @extend %propiedades-titulos-con-back;
+        }
+        .sucursal__direccion{
+            margin-top: $size-single;
+
+        }
+        .sucursal__redes{
+            .sucursal__iconos{
+                width: 80px;
+                padding: 10px;
+                margin-left: 20px;
+            }
+        }
+    }
+    .contenedorContacto__contenedorForm{
+        @extend %flex-column-all-center;
+        .contenedorForm__titulo{
+            text-align: center;
+            @extend %propiedades-titulos-con-back;
+            @include breakpoint-max(md){
+                margin-top: $size-double;
+            }
+
+        }
+        .contenedorForm__subtitulo{
+            text-align: center;
+            margin-bottom: 20px;
+            margin-top: 20px;
+
+        }
+        .contenedorForm__contactform{
+            width: 90%;
+            margin: auto;
+                    
+            .contactForm__fieldset{
+                @extend %flex-column-all-center;
+                display: block;
+                margin-left: 2px;
+                margin-right: 2px;
+                padding: $size-double;
+                border: 2px solid transparent;
+                background-color: #ccc;
+                border-radius: 10px;            
+                .fieldset__label{
+                    width: 90px;
+	                display:inline-block;
+                }
+                .fieldset__input{
+                    width:75%;
+                    padding:3px 10px;
+                    border:1px solid #f6f6f6;
+                    border-radius:3px;
+                    background-color:#f6f6f6;
+                    margin:8px 0;
+                    display:inline-block;
+                }
+                .fieldset__textarea{
+                    width:95%;
+                    padding:3px 10px;
+                    border:1px solid #f6f6f6;
+                    border-radius:3px;
+                    background-color:#f6f6f6;
+                    margin:8px 0;
+                    display:inline-block;
+
+                }
+                .fieldset__botones{
+                    @extend %flex-spacearound-center;
+                    .fieldset__button{
+                        width:150px;
+                        padding:3px 10px;
+                        border:1px solid #f6f6f6;
+                        border-radius:3px;
+                        background-color:#f6f6f6;
+                        margin:8px 0;
+                        display:inline-block;
+                        margin-right: 10px;
+                        margin-left: 15px;
+                    }
+                }
+            }
+
+        }
+    }
+    
+}
+
+
+/*CSS FOOTER*/
 footer{
     background-color: $color-principal;
     .contenedorMapa{

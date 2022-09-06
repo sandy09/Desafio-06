@@ -1,4 +1,4 @@
-.bannerPromo {
+.bannerPromo, .content .content__imagenes .imagenes__oferta, .contenedorContacto .contenedorContacto__sucursal, .contenedorContacto .contenedorContacto__contenedorForm, .contenedorContacto .contenedorContacto__contenedorForm .contenedorForm__contactform .contactForm__fieldset {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -6,14 +6,10 @@
   justify-items: center;
   align-items: center; }
 
-main .contenido .contenedorFiltros, main .contenido .contenedorFiltros .contenedorFiltros__texto {
+main .contenido .contenedorFiltros, main .contenido .contenedorFiltros .contenedorFiltros__texto, main .contenido .contenedorProductos, .contenedorContacto .contenedorContacto__contenedorForm .contenedorForm__contactform .contactForm__fieldset .fieldset__botones {
   display: flex;
   justify-content: space-around;
-  align-items: center; }
-
-main .contenido .contenedorProductos {
-  display: flex;
-  justify-content: space-evenly;
+  align-content: center;
   align-items: center; }
 
 main .contenido .contenedorFiltros .contenedorFiltros__filtro .filtro__boton, main .contenido .contenedorFiltros .contenedorFiltros__orden .orden__boton {
@@ -21,6 +17,21 @@ main .contenido .contenedorFiltros .contenedorFiltros__filtro .filtro__boton, ma
   border: 1px solid black;
   padding: 20px;
   margin: 20px; }
+
+.content .content__imagenes .imagenes__oferta {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
+  font-size: 50px;
+  text-align: center;
+  color: white;
+  border: 2.5px dotted white; }
+
+.content .content__imagenes .imagenes__titulo, .contenedorContacto .contenedorContacto__sucursal .sucursal__titulo, .contenedorContacto .contenedorContacto__contenedorForm .contenedorForm__titulo {
+  color: white;
+  background-color: #5D6B7D;
+  border: 1px solid #5D6B7D;
+  padding: 1em;
+  box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.2); }
 
 * {
   margin: 0;
@@ -57,10 +68,91 @@ header {
     font-size: xx-large; }
 
 body {
-  background-color: #9babc0; }
+  background-color: #ededed; }
 
+/*CSS INDEX*/
+.content {
+  height: 100%;
+  background-color: #ededed;
+  padding: 2em; }
+  .content .content__imagenes {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    grid-template-areas: "titulo titulo"  "oferta img_1"  "img_2 visitanos" "img_3 visitanos";
+    justify-content: center;
+    align-items: flex-start;
+    grid-gap: 2em;
+    padding: 2em; }
+    @media (max-width: 576px) {
+      .content .content__imagenes {
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        grid-template-areas: "titulo" "oferta" "img_1"  "img_2" "img_3"  "visitanos"; } }
+    .content .content__imagenes .imagenes__titulo {
+      grid-area: titulo;
+      text-align: center;
+      text-transform: uppercase;
+      background-color: #8392a9d1; }
+    .content .content__imagenes .imagenes__boton {
+      background-color: white;
+      border: 1px solid black;
+      padding: 1em;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      justify-items: center;
+      width: 300px;
+      margin-top: 20px;
+      text-decoration: none;
+      color: black; }
+      @media (max-width: 576px) {
+        .content .content__imagenes .imagenes__boton {
+          font-size: 10px;
+          width: 190px; } }
+      @media (min-width: 576px) and (max-width: 768px) {
+        .content .content__imagenes .imagenes__boton {
+          font-size: 15px; } }
+    .content .content__imagenes .imagenes__oferta {
+      grid-area: oferta;
+      background-color: red;
+      width: 100%;
+      height: 100%; }
+      .content .content__imagenes .imagenes__oferta a {
+        text-decoration: none;
+        color: white;
+        padding: 0.66667em; }
+      .content .content__imagenes .imagenes__oferta a:hover {
+        transform: scale(105%); }
+      @media (max-width: 576px) {
+        .content .content__imagenes .imagenes__oferta {
+          height: 250px;
+          font-size: xx-large; } }
+      @media (min-width: 576px) and (max-width: 768px) {
+        .content .content__imagenes .imagenes__oferta {
+          font-size: 30px; } }
+    .content .content__imagenes div {
+      display: flex;
+      flex-direction: column;
+      justify-items: center;
+      align-items: center; }
+    .content .content__imagenes img {
+      width: 100%;
+      box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.2); }
+    .content .content__imagenes .imagenes__img_1 {
+      grid-area: img_1; }
+    .content .content__imagenes .imagenes__img_2 {
+      grid-area: img_2; }
+    .content .content__imagenes .imagenes__img_3 {
+      grid-area: img_3; }
+    .content .content__imagenes .imagenes__visitanos {
+      grid-area: visitanos; }
+
+/*CSS PAGINAS CATEGORIAS*/
 main {
-  background-color: #9babc0; }
+  background-color: #ededed;
+  height: 100%;
+  width: 100%; }
   main .contenido .contenedorFiltros {
     height: 200px;
     border-bottom: 1px solid white; }
@@ -75,16 +167,13 @@ main {
         text-align: center;
         font-size: 1.5rem; }
   main .contenido .contenedorProductos {
-    height: 500px;
     flex-wrap: wrap;
-    flex-flow: row wrap;
-    padding-bottom: 50px; }
-    @media (max-width: 576px) {
-      main .contenido .contenedorProductos {
-        height: 1300px; } }
+    height: 100%;
+    margin-left: 1em;
+    margin-right: 1em; }
     main .contenido .contenedorProductos .contenedorProductos__card {
-      height: 250px;
-      width: 250px;
+      height: 100%;
+      padding: 2em;
       display: inline-block; }
       main .contenido .contenedorProductos .contenedorProductos__card .card__img {
         height: 250px;
@@ -103,6 +192,82 @@ main {
         font-style: italic;
         text-decoration: line-through; }
 
+/*CSS FAQ*/
+.accordion-item button:not(.collapsed) {
+  color: white;
+  background-color: #5D6B7D; }
+
+/*CSS CONTACTO*/
+.contenedorContacto {
+  background-color: #ededed;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  padding: 50px 0px 50px 0px; }
+  .contenedorContacto .contenedorContacto__sucursal {
+    width: 50%;
+    text-align: center;
+    line-height: 30px;
+    margin-top: 5px; }
+    .contenedorContacto .contenedorContacto__sucursal .sucursal__direccion {
+      margin-top: 1em; }
+    .contenedorContacto .contenedorContacto__sucursal .sucursal__redes .sucursal__iconos {
+      width: 80px;
+      padding: 10px;
+      margin-left: 20px; }
+  .contenedorContacto .contenedorContacto__contenedorForm .contenedorForm__titulo {
+    text-align: center; }
+    @media (max-width: 768px) {
+      .contenedorContacto .contenedorContacto__contenedorForm .contenedorForm__titulo {
+        margin-top: 2em; } }
+  .contenedorContacto .contenedorContacto__contenedorForm .contenedorForm__subtitulo {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px; }
+  .contenedorContacto .contenedorContacto__contenedorForm .contenedorForm__contactform {
+    width: 90%;
+    margin: auto; }
+    .contenedorContacto .contenedorContacto__contenedorForm .contenedorForm__contactform .contactForm__fieldset {
+      display: block;
+      margin-left: 2px;
+      margin-right: 2px;
+      padding: 2em;
+      border: 2px solid transparent;
+      background-color: #ccc;
+      border-radius: 10px; }
+      .contenedorContacto .contenedorContacto__contenedorForm .contenedorForm__contactform .contactForm__fieldset .fieldset__label {
+        width: 90px;
+        display: inline-block; }
+      .contenedorContacto .contenedorContacto__contenedorForm .contenedorForm__contactform .contactForm__fieldset .fieldset__input {
+        width: 75%;
+        padding: 3px 10px;
+        border: 1px solid #f6f6f6;
+        border-radius: 3px;
+        background-color: #f6f6f6;
+        margin: 8px 0;
+        display: inline-block; }
+      .contenedorContacto .contenedorContacto__contenedorForm .contenedorForm__contactform .contactForm__fieldset .fieldset__textarea {
+        width: 95%;
+        padding: 3px 10px;
+        border: 1px solid #f6f6f6;
+        border-radius: 3px;
+        background-color: #f6f6f6;
+        margin: 8px 0;
+        display: inline-block; }
+      .contenedorContacto .contenedorContacto__contenedorForm .contenedorForm__contactform .contactForm__fieldset .fieldset__botones .fieldset__button {
+        width: 150px;
+        padding: 3px 10px;
+        border: 1px solid #f6f6f6;
+        border-radius: 3px;
+        background-color: #f6f6f6;
+        margin: 8px 0;
+        display: inline-block;
+        margin-right: 10px;
+        margin-left: 15px; }
+
+/*CSS FOOTER*/
 footer {
   background-color: #5D6B7D; }
   footer .contenedorMapa {

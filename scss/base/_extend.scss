@@ -10,6 +10,7 @@
 %flex-spacearound-center{
     display: flex;
     justify-content: space-around;
+    align-content:center;
     align-items: center;
 }
 
@@ -24,4 +25,19 @@
     border: 1px solid black;
     padding: 20px;
     margin: 20px;
+}
+%propiedades-oferta{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    font-size: 50px;
+    text-align: center;
+    color: white;
+    border: 2.5px dotted white;
+}
+%propiedades-titulos-con-back{
+    color: white;
+    background-color: $color-principal;
+    border: 1px solid $color-principal;
+    padding: $size-single;
+    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.2);
 }

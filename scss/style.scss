@@ -91,10 +91,11 @@ body{
           }
         .imagenes__titulo{
             @extend %propiedades-titulos-con-back;
+            font-weight: 100;
             grid-area: titulo;
             text-align: center;
-            text-transform: uppercase;
             background-color: #8392a9d1;
+            border: none;
 
         }
 
@@ -127,6 +128,7 @@ body{
             height: 100%;
             @extend %propiedades-oferta;
             @extend %flex-column-all-center;
+            box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.2);
             a{
                 text-decoration: none;
                 color: white;
@@ -223,28 +225,45 @@ main{
             .contenedorProductos__card{
                 height: 100%;
                 padding: $size-double;
+                margin: $size-single;
                 display: inline-block;
+                text-align: center;
                 .card__img{
                     height: $card-height;
                     width: $card-width;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+                    border-radius: 10px;
+
                 }
                 .card__nombre{
                     padding-top: 10px;
                     margin-top: 10px;
-                    text-align: center;
                     border-top: 1px solid white;
 
                 }
                 .card__precio{
                     color: $color-atencion;
                     font-size: x-large;
-                    text-align: center;
                 }
                 .card__preciodesc{
-                    text-align: center;
                     font-style: italic;
                     text-decoration: line-through;
 
+                }
+                .card__boton{
+                    background-color: $color-fuente-light;
+                    padding: 3px;
+                    color: $color-fuente-dark;
+                    font-weight: bold;
+                    width: $card-width;
+                    cursor: pointer;
+                    border-radius: 10px;
+                    border: 1px solid #f3f4f5;
+                    font-weight: 400;
+
+                }
+                .card__boton:hover{
+                    font-weight: bold;
                 }
             }
 
